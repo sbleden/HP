@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Table {
 
-	private List<Chair> chairs = new LinkedList<>();
+	private List<Person> persons = new LinkedList<>();
 
-	public void addChair(Chair chair) {
-		this.chairs.add(chair);
+	public void addPerson(Person person) {
+		this.persons.add(person);
 	}
 
-	public List<Chair> getChairs() {
-		return chairs;
+	public List<Person> getPersons() {
+		return persons;
 	}
 
-	public void setChairs(List<Chair> chairs) {
-		this.chairs = chairs;
+	public void setPersons(List<Person> persons) {
+		this.persons = persons;
 	}
 
 }
