@@ -9,6 +9,7 @@ public class Table {
 
 	public void addPerson(Person person) {
 		this.persons.add(person);
+		person.setTable(this);
 	}
 
 	public List<Person> getPersons() {
@@ -17,6 +18,7 @@ public class Table {
 
 	public void setPersons(List<Person> persons) {
 		this.persons = persons;
+		persons.stream().forEach(person -> person.setTable(this));
 	}
 
 }
