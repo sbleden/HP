@@ -5,22 +5,23 @@ import java.util.Set;
 
 public class Person {
 
-	private String id;
+	private int id;
 	private String name;
 	private int age;
 	private Set<Interest> interests = new HashSet<>();
 	private Set<Language> languages = new HashSet<>();
+	private Table table;
 
-	public Person(String id) {
+	public Person(int id) {
 		this.id = id;
 	}
 
-	public Person(String id, String name) {
+	public Person(int id, String name) {
 		this(id);
 		this.name = name;
 	}
 
-	public Person(String id, String name, int age) {
+	public Person(int id, String name, int age) {
 		this(id, name);
 		this.age = age;
 	}
@@ -65,7 +66,15 @@ public class Person {
 		this.languages = languages;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
+	}
+
+	public Table getTable() {
+		return table;
+	}
+
+	public void setTable(Table table) {
+		this.table = table;
 	}
 }
