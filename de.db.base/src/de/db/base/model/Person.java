@@ -1,5 +1,6 @@
 package de.db.base.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Person {
@@ -7,8 +8,8 @@ public class Person {
 	private String id;
 	private String name;
 	private int age;
-	private Set<Interest> interests;
-	private Set<Language> languages;
+	private Set<Interest> interests = new HashSet<>();
+	private Set<Language> languages = new HashSet<>();
 
 	public Person(String id) {
 		this.id = id;
