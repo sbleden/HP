@@ -3,8 +3,6 @@ package de.db.base;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import com.google.common.collect.Table;
-
 /**
  * The activator class controls the plug-in life cycle
  */

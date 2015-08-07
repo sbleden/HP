@@ -1,5 +1,7 @@
 package de.db.base.solving;
 
+import com.google.common.base.Preconditions;
+
 import de.db.base.solving.interfaces.IRoomDescriptor;
 import de.db.base.solving.interfaces.ISolver;
 import de.db.base.solving.provider.IPersonProvider;
@@ -15,9 +17,9 @@ public class SolverBuilder {
 
 	private void performPreChecks(IPersonProvider personProvider, IPersonWeigthDeterminer personWeigthDeterminer,
 			IRoomDescriptor roomDescriptor) {
-		if (personProvider == null || personWeigthDeterminer == null || roomDescriptor == null) {
-			throw new RuntimeException();
-		}
+		Preconditions.checkNotNull(personProvider);
+		Preconditions.checkNotNull(roomDescriptor);
+		Preconditions.checkNotNull(personWeigthDeterminer);
 	}
 
 }
