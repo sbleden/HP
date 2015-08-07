@@ -2,10 +2,12 @@ package de.db.base.solving.interfaces;
 
 import java.util.Set;
 
+import de.db.base.model.Table;
+
 public interface IRoomDescriptor {
 
-	public Set<ITableDescription> getTables();
+	public Set<Table> getTables();
 
-	public boolean isNeighbourTable(ITableDescription table1, ITableDescription table2);
+	public boolean isNeighbourTable(Table table1, Table table2);
 
 }

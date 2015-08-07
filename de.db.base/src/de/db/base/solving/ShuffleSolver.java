@@ -12,7 +12,6 @@ import de.db.base.solving.interfaces.IConnectionDescription;
 import de.db.base.solving.interfaces.IRoomDescriptor;
 import de.db.base.solving.interfaces.ISolver;
 import de.db.base.solving.interfaces.ISolvingResult;
-import de.db.base.solving.interfaces.ITableDescription;
 import de.db.base.solving.provider.IPersonProvider;
 import de.db.base.solving.provider.IPersonWeigthDeterminer;
 
@@ -21,16 +20,14 @@ public class ShuffleSolver implements ISolver {
 	protected IPersonProvider personProvider;
 	protected IPersonWeigthDeterminer personWeigthDeterminer;
 	protected IRoomDescriptor roomDescriptor;
-	protected ITableDescription tableDescription;
 	private int runs;
 
 	public ShuffleSolver(IPersonProvider personProvider, IPersonWeigthDeterminer personWeigthDeterminer,
-			IRoomDescriptor roomDescriptor, ITableDescription tableDescription, int runs) {
+			IRoomDescriptor roomDescriptor, int runs) {
 		super();
 		this.personProvider = personProvider;
 		this.personWeigthDeterminer = personWeigthDeterminer;
 		this.roomDescriptor = roomDescriptor;
-		this.tableDescription = tableDescription;
 		this.runs = runs;
 	}
 
@@ -53,7 +50,7 @@ public class ShuffleSolver implements ISolver {
 		Hashtable<Person, Table> mapping = new Hashtable<>();
 		Set<Table> fullTables = new HashSet<>();
 		Set<Table> nonFullTables = new HashSet<>();
-		roomDescriptor.getTables().forEach(td -> nonFullTables.add(new Table(td)));
+		roomDescriptor.getTables().forEach(td -> nonFullTables.add(td));
 		for (Person person : personProvider.getPersons()) {
 			if (nonFullTables.isEmpty()) {
 				throw new InvalidInputException();
