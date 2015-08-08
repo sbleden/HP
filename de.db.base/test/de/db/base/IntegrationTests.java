@@ -10,7 +10,6 @@ import de.db.base.solving.provider.SimpleWeightDeterminer;
 import junit.framework.TestCase;
 
 public class IntegrationTests extends TestCase {
-	// Tests
 
 	@Test
 	public void testSimple() {
