@@ -17,7 +17,11 @@ public class LiteralFactory {
 		Literal literal = literalMap.get(code, negated);
 		if (literal == null) {
 			literal = new Literal(code, negated, counter++);
+			Literal negation = new Literal(code, !negated, counter++);
+			literal.setNegatedPartner(negation);
+			negation.setNegatedPartner(literal);
 			literalMap.put(code, negated, literal);
+			literalMap.put(code, !negated, negation);
 		}
 		return literal;
 	}
