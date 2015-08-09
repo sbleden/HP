@@ -2,21 +2,18 @@ package de.db.base;
 
 import org.junit.Test;
 
-import de.db.base.model.interfaces.ICorrelationProvider;
 import de.db.base.solving.SolverBuilder;
 import de.db.base.solving.interfaces.IRoomDescriptor;
-import de.db.base.solving.provider.PersonByRoomDescriptorProvider;
-import de.db.base.solving.provider.SimpleWeightDeterminer;
+import de.db.base.testscene1.Scene1;
 import junit.framework.TestCase;
 
 public class IntegrationTests extends TestCase {
 
 	@Test
 	public void testSimple() {
+		Scene1 scene1 = new Scene1();
 		SolverBuilder builder = new SolverBuilder();
-		IRoomDescriptor roomDescriptor = null;
-		ICorrelationProvider correlationProvider = null;
-		builder.create(new PersonByRoomDescriptorProvider(roomDescriptor),
-				new SimpleWeightDeterminer(correlationProvider), roomDescriptor);
+		IRoomDescriptor roomDescriptor = new MultipleSingleTableRoomCreator().createMultipleSingleTableInCircle(5, 6);
+		builder.create(scene1.getPersonProvider(), scene1.getWeigthDeterminer(), roomDescriptor);
 	}
 }
