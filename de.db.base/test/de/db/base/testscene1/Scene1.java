@@ -102,7 +102,7 @@ public class Scene1 {
 
 	private void cartesian(int weigth, Set<Person> p1, Set<Person> p2) {
 		Sets.cartesianProduct(p1, p2).stream()
-				.forEach(pair -> correlationProvider.addCorrelation(pair.get(0), pair.get(1), 10));
+				.forEach(pair -> correlationProvider.addCorrelation(pair.get(0), pair.get(1), weigth));
 	}
 
 	private void cartesian(int weigth, Person... persons) {

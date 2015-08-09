@@ -1,5 +1,6 @@
 package de.db.base.solving;
 
+import java.util.HashSet;
 import java.util.Hashtable;
 
 import de.db.base.model.Person;
@@ -27,6 +28,6 @@ public class SimpleSolvingResult implements ISolvingResult {
 
 	@Override
 	public String toString() {
-		return "Weigth: " + weigth + " , " + personTableMapping.values().toString();
+		return "Weigth: " + weigth + " , " + new HashSet<>(personTableMapping.values()).toString();
 	}
 }

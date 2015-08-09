@@ -12,7 +12,7 @@ public class SolverBuilder {
 	public ISolver create(IPersonProvider personProvider, IPersonWeigthDeterminer personWeigthDeterminer,
 			IRoomDescriptor roomDescriptor) {
 		performPreChecks(personProvider, personWeigthDeterminer, roomDescriptor);
-		return new ShuffleSolver(personProvider, personWeigthDeterminer, roomDescriptor, 1000);
+		return new ShuffleSolver(personProvider, personWeigthDeterminer, roomDescriptor, 10000);
 	}
 
 	private void performPreChecks(IPersonProvider personProvider, IPersonWeigthDeterminer personWeigthDeterminer,

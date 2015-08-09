@@ -57,7 +57,7 @@ public class ShuffleSolver implements ISolver {
 			if (nonFullTables.isEmpty()) {
 				throw new InvalidInputException();
 			}
-			Table freeTable = Iterables.get(nonFullTables, ((int) Math.random() * nonFullTables.size()));
+			Table freeTable = Iterables.get(nonFullTables, ((int) (Math.random() * nonFullTables.size())));
 			freeTable.addPerson(person);
 			mapping.put(person, freeTable);
 			if (freeTable.isFull()) {

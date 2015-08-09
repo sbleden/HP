@@ -6,6 +6,7 @@ import de.db.base.model.interfaces.ICorrelationProvider;
 
 public class CorrelationProvider implements ICorrelationProvider {
 
+	private static final int DEFAULT = 5;
 	public static int MIN_CORRELATION = 0;
 	public static int MAX_CORRELATION = 10;
 
@@ -26,7 +27,7 @@ public class CorrelationProvider implements ICorrelationProvider {
 			correlation = correlationTable.get(person2.getId(), person1.getId());
 		}
 		if (correlation == null) {
-			return 5;
+			return DEFAULT;
 		}
 		return correlation;
 	}

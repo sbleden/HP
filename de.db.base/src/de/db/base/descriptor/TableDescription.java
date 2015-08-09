@@ -22,4 +22,26 @@ public class TableDescription implements ITableDescription {
 		return tableNumber;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + tableNumber;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TableDescription other = (TableDescription) obj;
+		if (tableNumber != other.tableNumber)
+			return false;
+		return true;
+	}
+
 }
