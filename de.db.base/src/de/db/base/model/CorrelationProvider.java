@@ -21,7 +21,14 @@ public class CorrelationProvider implements ICorrelationProvider {
 
 	@Override
 	public Integer getCorrelation(Person person1, Person person2) {
-		return correlationTable.get(person1.getId(), person2.getId());
+		Integer correlation = correlationTable.get(person1.getId(), person2.getId());
+		if (correlation == null) {
+			correlation = correlationTable.get(person2.getId(), person1.getId());
+		}
+		if (correlation == null) {
+			return 5;
+		}
+		return correlation;
 	}
 
 }
