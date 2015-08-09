@@ -16,6 +16,9 @@ public class Table {
 	}
 
 	public void addPerson(Person person) {
+		if (isFull()) {
+			throw new IllegalStateException();
+		}
 		this.persons.add(person);
 		person.setTable(this);
 	}
@@ -34,7 +37,12 @@ public class Table {
 	}
 
 	public boolean isFull() {
-		return persons.size() + 1 >= tableDescription.getNumberOfPlaces();
+		return persons.size() >= tableDescription.getNumberOfPlaces();
+	}
+
+	@Override
+	public String toString() {
+		return "Table [persons=" + persons + "]";
 	}
 
 }

@@ -43,6 +43,7 @@ public class ShuffleSolver implements ISolver {
 				bestWeigth = tempWeigth;
 			}
 		}
+		bestResult.setWeigth(bestWeigth);
 		return bestResult;
 	}
 
@@ -51,15 +52,17 @@ public class ShuffleSolver implements ISolver {
 		Set<Table> fullTables = new HashSet<>();
 		Set<Table> nonFullTables = new HashSet<>();
 		roomDescriptor.getTables().forEach(td -> nonFullTables.add(new Table(td)));
-		for (Person person : personProvider.getPersons()) {
+		Set<Person> persons = personProvider.getPersons();
+		for (Person person : persons) {
 			if (nonFullTables.isEmpty()) {
 				throw new InvalidInputException();
 			}
 			Table freeTable = Iterables.get(nonFullTables, ((int) Math.random() * nonFullTables.size()));
 			freeTable.addPerson(person);
+			mapping.put(person, freeTable);
 			if (freeTable.isFull()) {
 				fullTables.add(freeTable);
-				nonFullTables.remove(nonFullTables);
+				nonFullTables.remove(freeTable);
 			}
 		}
 		return new SimpleSolvingResult(mapping);
@@ -75,12 +78,12 @@ public class ShuffleSolver implements ISolver {
 						@Override
 						public boolean isNeighbourTable() {
 							return roomDescriptor.isNeighbourTable(result.get(p1).getTableDescription(),
-									result.get(p1).getTableDescription());
+									result.get(p2).getTableDescription());
 						}
 
 						@Override
 						public boolean equalTables() {
-							return result.get(p1).equals(result.get(p1));
+							return result.get(p1).equals(result.get(p2));
 						}
 					}, p1, p2);
 				}

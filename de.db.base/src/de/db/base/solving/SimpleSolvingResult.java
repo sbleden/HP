@@ -8,7 +8,8 @@ import de.db.base.solving.interfaces.ISolvingResult;
 
 public class SimpleSolvingResult implements ISolvingResult {
 
-	Hashtable<Person, Table> personTableMapping;
+	protected Hashtable<Person, Table> personTableMapping;
+	protected int weigth;
 
 	public SimpleSolvingResult(Hashtable<Person, Table> personTableMapping) {
 		super();
@@ -20,4 +21,12 @@ public class SimpleSolvingResult implements ISolvingResult {
 		return personTableMapping.get(person);
 	}
 
+	public void setWeigth(int weigth) {
+		this.weigth = weigth;
+	}
+
+	@Override
+	public String toString() {
+		return "Weigth: " + weigth + " , " + personTableMapping.values().toString();
+	}
 }

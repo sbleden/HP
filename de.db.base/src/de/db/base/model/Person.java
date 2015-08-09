@@ -77,4 +77,9 @@ public class Person {
 	public void setTable(Table table) {
 		this.table = table;
 	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
 }
