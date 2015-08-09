@@ -50,7 +50,7 @@ public class ShuffleSolver implements ISolver {
 		Hashtable<Person, Table> mapping = new Hashtable<>();
 		Set<Table> fullTables = new HashSet<>();
 		Set<Table> nonFullTables = new HashSet<>();
-		roomDescriptor.getTables().forEach(td -> nonFullTables.add(td));
+		roomDescriptor.getTables().forEach(td -> nonFullTables.add(new Table(td)));
 		for (Person person : personProvider.getPersons()) {
 			if (nonFullTables.isEmpty()) {
 				throw new InvalidInputException();
@@ -74,7 +74,8 @@ public class ShuffleSolver implements ISolver {
 
 						@Override
 						public boolean isNeighbourTable() {
-							return roomDescriptor.isNeighbourTable(result.get(p1), result.get(p1));
+							return roomDescriptor.isNeighbourTable(result.get(p1).getTableDescription(),
+									result.get(p1).getTableDescription());
 						}
 
 						@Override
