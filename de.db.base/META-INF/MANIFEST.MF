@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Base
-Bundle-SymbolicName: de.db.base
+Bundle-SymbolicName: de.db.model
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.db.base.Activator
 Require-Bundle: org.eclipse.ui,
