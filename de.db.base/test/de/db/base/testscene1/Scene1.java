@@ -20,8 +20,8 @@ public class Scene1 {
 	private int idCounter = 0;
 
 	public Scene1() {
-		build();
 		correlationProvider = new CorrelationProvider();
+		build();
 	}
 
 	protected void build() {
