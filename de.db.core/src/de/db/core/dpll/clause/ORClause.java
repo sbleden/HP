@@ -1,6 +1,5 @@
 package de.db.core.dpll.clause;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import de.db.core.dpll.Literal;

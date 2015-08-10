@@ -16,5 +16,7 @@ public class CNFBuilder {
 	public Set<IClause> createClauses(Set<IFormula> formulas) {
 		return formulas.stream().map(this::createClauses).flatMap(l -> l.stream()).collect(Collectors.toSet());
 	}
+	
+	
 
 }
