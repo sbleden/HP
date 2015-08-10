@@ -1,5 +1,6 @@
 package de.db.core.formula;
 
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,7 +15,7 @@ public class CardinalityFormula implements ICardinalityFormula {
 
 	public CardinalityFormula(int minCardinality, int maxCardinality) {
 		operands = new TreeSet<>();
-		this.minCardinality = minCardinality;
+		this.minCardinality = Math.max(0, minCardinality);
 		this.maxCardinality = maxCardinality;
 	}
 
@@ -46,5 +47,19 @@ public class CardinalityFormula implements ICardinalityFormula {
 	@Override
 	public Set<IOperand> getOperands() {
 		return this.operands;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		Iterator<IOperand> iterator = operands.iterator();
+		while (iterator.hasNext()) {
+			IOperand operand = iterator.next();
+			sb.append(operand);
+			if (iterator.hasNext()) {
+				sb.append(", ");
+			}
+		}
+		return sb.toString();
 	}
 }

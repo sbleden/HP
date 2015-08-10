@@ -1,6 +1,8 @@
 package de.db.middle.rulegeneration;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.HashBasedTable;
@@ -17,7 +19,7 @@ import de.db.core.interfaces.IOperand;
 public class RuleGenerator {
 
 	// Table Number, Person Id, Operand
-	private HashBasedTable<Integer, String, Operand> operandTable = HashBasedTable.create();
+	private HashBasedTable<Integer, String, IOperand> operandTable = HashBasedTable.create();
 
 	private IRoomDescriptor roomDescriptor;
 	private IPersonProvider personProvider;
@@ -27,8 +29,8 @@ public class RuleGenerator {
 		this.personProvider = personProvider;
 	}
 
-	public Set<ICardinalityFormula> generate() {
-		Set<ICardinalityFormula> formulas = new HashSet<>();
+	public List<ICardinalityFormula> generate() {
+		List<ICardinalityFormula> formulas = new ArrayList<>();
 		for (ITableDescription tableDesc : roomDescriptor.getTables()) {
 			Set<IOperand> operands = new HashSet<>();
 			for (Person person : personProvider.getPersons()) {
@@ -44,4 +46,7 @@ public class RuleGenerator {
 		return formulas;
 	}
 
+	public HashBasedTable<Integer, String, IOperand> getOperandTable() {
+		return this.operandTable;
+	}
 }
