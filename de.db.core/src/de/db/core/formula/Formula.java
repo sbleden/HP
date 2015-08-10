@@ -19,25 +19,25 @@ public class Formula implements IFormula {
 		this.operator = operator;
 	}
 
-	public Formula and(Formula formula) {
+	public Formula and(IFormula formula) {
 		Formula newFormula = new Formula(Operator.AND);
 		addOperands(formula, newFormula);
 		return newFormula;
 	}
 
-	public Formula or(Formula formula) {
+	public Formula or(IFormula formula) {
 		Formula newFormula = new Formula(Operator.OR);
 		addOperands(formula, newFormula);
 		return newFormula;
 	}
 
-	public Formula implies(Formula formula) {
+	public Formula implies(IFormula formula) {
 		Formula newFormula = new Formula(Operator.IMPLIES);
 		addOperands(formula, newFormula);
 		return newFormula;
 	}
 
-	public Formula equivalent(Formula formula) {
+	public Formula equivalent(IFormula formula) {
 		Formula newFormula = new Formula(Operator.EQUIVALENT);
 		addOperands(formula, newFormula);
 		return newFormula;
@@ -49,7 +49,7 @@ public class Formula implements IFormula {
 		return newFormula;
 	}
 
-	private void addOperands(Formula formula, Formula newFormula) {
+	private void addOperands(IFormula formula, Formula newFormula) {
 		newFormula.operands.add(this);
 		newFormula.operands.add(formula);
 	}

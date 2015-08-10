@@ -18,11 +18,19 @@ public class CardinalityFormula implements ICardinalityFormula {
 		this.maxCardinality = maxCardinality;
 	}
 
-	public CardinalityFormula or(CardinalityFormula formula) {
+	public CardinalityFormula or(ICardinalityFormula formula) {
 		CardinalityFormula newFormula = new CardinalityFormula(getMinCardinality(), getMaxCardinality());
 		newFormula.operands.addAll(this.getOperands());
 		newFormula.operands.addAll(formula.getOperands());
 		return newFormula;
+	}
+
+	public void add(IOperand operand) {
+		this.operands.add(operand);
+	}
+
+	public void addAll(Set<IOperand> operands) {
+		this.operands.addAll(operands);
 	}
 
 	@Override

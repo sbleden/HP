@@ -1,4 +1,4 @@
-package de.db.base.solving.provider;
+package de.db.base.model.interfaces;
 
 import java.util.Set;
 

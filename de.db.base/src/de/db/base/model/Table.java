@@ -3,7 +3,7 @@ package de.db.base.model;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.db.base.solving.interfaces.ITableDescription;
+import de.db.base.model.interfaces.ITableDescription;
 
 public class Table {
 

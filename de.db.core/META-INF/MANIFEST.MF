@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
-Bundle-SymbolicName: de.db.core
+Bundle-SymbolicName: de.db.core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.db.core.Activator
 Require-Bundle: org.eclipse.ui,
@@ -10,3 +10,5 @@ Require-Bundle: org.eclipse.ui,
  de.db.util;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: de.db.core.formula,
+ de.db.core.interfaces

@@ -10,7 +10,7 @@ public class CorrelationProvider implements ICorrelationProvider {
 	public static int MIN_CORRELATION = 0;
 	public static int MAX_CORRELATION = 10;
 
-	private HashBasedTable<Integer, Integer, Integer> correlationTable = HashBasedTable.create();
+	private HashBasedTable<String, String, Integer> correlationTable = HashBasedTable.create();
 
 	/**
 	 * The correlation value has to be between MIN_CORRELATION and

@@ -1,4 +1,4 @@
-package de.db.base.solving.interfaces;
+package de.db.base.model.interfaces;
 
 import java.util.Set;
 

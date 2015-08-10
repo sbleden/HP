@@ -5,8 +5,8 @@ import java.util.Set;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
 
-import de.db.base.solving.interfaces.IRoomDescriptor;
-import de.db.base.solving.interfaces.ITableDescription;
+import de.db.base.model.interfaces.IRoomDescriptor;
+import de.db.base.model.interfaces.ITableDescription;
 
 public class MultipleSingleTableRoomDescriptor implements IRoomDescriptor {
 

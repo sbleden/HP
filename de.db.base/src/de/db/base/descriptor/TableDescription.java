@@ -1,6 +1,6 @@
 package de.db.base.descriptor;
 
-import de.db.base.solving.interfaces.ITableDescription;
+import de.db.base.model.interfaces.ITableDescription;
 
 public class TableDescription implements ITableDescription {
 

@@ -1,7 +1,7 @@
 package de.db.base.solving.provider;
 
 import de.db.base.model.Person;
-import de.db.base.solving.interfaces.IConnectionDescription;
+import de.db.base.model.interfaces.IConnectionDescription;
 
 public interface IPersonWeigthDeterminer {
 

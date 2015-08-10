@@ -1,9 +1,9 @@
-package de.db.base.solving.provider;
+package de.db.base.model;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import de.db.base.model.Person;
+import de.db.base.model.interfaces.IPersonProvider;
 
 public class PersonProvider implements IPersonProvider {
 
